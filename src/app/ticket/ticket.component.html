@@ -1,0 +1,85 @@
+<!-- <div class="container">
+    <div (bookObj) = 'random($event)'>
+        <form class="form-horizontal">
+            <input type = "hidden" [(ngModel)] = "book.id" name = "id" /> 
+            <div class="form-group">
+                <label class="control-label col-sm-2">Book Title</label>
+                <div class="col-sm-8">
+                    <input type = "text" [(ngModel)] = "book.title" name = "title" class="form-control" />
+                </div>    
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2">Book Author</label>
+                <div class="col-sm-8">
+                        <input type = "text" [(ngModel)] = "book.author" name = "author" class="form-control" />
+                </div>    
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-8">
+                    <button (click) = "addBook()" class = "btn btn-primary">Add Book</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div>
+        <table class = "table table-striped table-bordered">
+            <tr style = "background: lightblue;">
+                <th>ID</th>
+                <th>TITLE</th>
+                <th>AUTHOR</th>
+                <th>ACTIONS</th>
+            </tr>
+            <tr *ngFor = "let book of books">
+                <td>{{book.id}}</td>
+                <td>{{book.title}}</td>
+                <td>{{book.author}}</td>
+                <td>
+                    <button (click) = "getBook(book.id)" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-edit"></span></button>      
+                    &nbsp;|&nbsp;
+                    <button (click) = "deleteBook(book.id)" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-trash"></span></button>
+                </td>
+            </tr>
+            <tr *ngIf = "books && books.length == 0">
+                <td colspan = "4">No records found!</td>
+            </tr>
+        </table>
+    </div>
+</div>
+-->
+
+
+<!--
+<input id="file" type="file" accept=".csv" (change)="fileUpload($event.target.files)">
+ <label>:
+            <input [(ngModel)]="hero.name" placeholder="name"/>
+          </label>
+
+        -->
+<div *ngIf="ticket">
+
+        <nz-descriptions nzTitle="Ticket Information" nzBordered>
+                <nz-descriptions-item nzTitle="id">{{ticket.id}}</nz-descriptions-item>
+                <nz-descriptions-item nzTitle="dateEnregistrement">{{ticket.dateEnregistrement}}</nz-descriptions-item>
+                <nz-descriptions-item nzTitle="origine">{{ticket.origine}}</nz-descriptions-item>
+                <nz-descriptions-item nzTitle="demandeur">
+                  {{ticket.demandeur}}
+                </nz-descriptions-item>
+                <nz-descriptions-item nzTitle="beneficiaire" [nzSpan]="3">
+                  {{ticket.beneficiaire}}
+                </nz-descriptions-item>
+                <nz-descriptions-item nzTitle="statu" [nzSpan]="3">
+                  <nz-badge nzStatus="success" nzText="{{ticket.statu}}"></nz-badge>
+                </nz-descriptions-item>
+                <nz-descriptions-item nzTitle="groupeResolu">{{ticket.groupeResolu}}</nz-descriptions-item>
+                <nz-descriptions-item nzTitle="Discount">$20.00</nz-descriptions-item>
+                <nz-descriptions-item nzTitle="Official Receipts">$60.00</nz-descriptions-item>
+                <nz-descriptions-item nzTitle="sujet">
+                  {{ticket.sujet}}
+                </nz-descriptions-item>
+              </nz-descriptions>
+
+    <!-- <h2>{{this.ticket.id | uppercase}} Details</h2>
+    <div><span>id: </span>{{ticket.id}}</div>
+    <div><span>date resolution: {{ticket.resoluPar}}</span></div> -->
+</div>
+      <button (click)="goBack()">go back</button>

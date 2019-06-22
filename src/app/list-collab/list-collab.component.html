@@ -1,0 +1,44 @@
+
+
+
+<!-- <ul>
+    <li  *ngFor='let collab of collabs'>
+        <a routerLink='../Collab/{{collab.id}}' style="display: inline">
+            <nz-card style="width: 300px;margin-top: 16px">
+                <nz-card-meta
+                  [nzAvatar]="avatarTemplate"
+                  nzTitle="{{collab.name}}"
+                  nzDescription="This is the description"
+                ></nz-card-meta>
+              </nz-card>
+        
+        </a>
+          
+      </li>
+</ul> -->
+
+
+<!-- <nz-list><nz-card *ngFor='let collab of collabs'> <nz-meta nzTitle="{{collab.name}}" /><nz-avatar nz-Text='collab'></nz-avatar></nz-card></nz-list> -->
+    
+<nz-list [nzDataSource]="collabs" [nzRenderItem]="item" [nzGrid]="{ gutter: 16, xs: 24, sm: 12, md: 6, lg: 6, xl: 4 }">
+    <ng-template #item let-item>
+      <nz-list-item [nzContent]="nzContent">
+        <ng-template #nzContent>
+            <a routerLink='../Collab/{{item.id}}' style="display: inline">
+               <nz-card>
+                <nz-card-meta
+                  [nzAvatar]="avatarTemplate"
+                  nzTitle="{{item.name}}"
+                  nzDescription="This is the description"
+                ></nz-card-meta>
+              </nz-card>
+              </a>
+
+        </ng-template>
+      </nz-list-item>
+    </ng-template>
+  </nz-list>
+
+
+  
+
