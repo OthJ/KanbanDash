@@ -44,20 +44,20 @@
 
           <div nz-row>
                 <div nz-col nzSpan='12'>
-                        <h2>Priorities</h2>
+                  <nz-divider nzText="Priorités"></nz-divider>
                         totale:--------------------------------------------------<a routerLink='/tickets/{{collab.name}}' >{{collab.p1+collab.p2+collab.p3+collab.p4+collab.p5}}</a><br/>
                             p1:--------------------------------------------------<a>{{collab.p1}}</a><br/>
                             p2:--------------------------------------------------<a>{{collab.p2}}</a><br/>
                             p3:--------------------------------------------------<a>{{collab.p3}}</a><br/>
                             p4:--------------------------------------------------<a>{{collab.p4}}</a><br/>
                             p5:--------------------------------------------------<a>{{collab.p5}}</a><br/>
-                      <h2>SLA</h2>
+                      <nz-divider nzText="SLA"></nz-divider>
                             OK---------------------------------------------------<a>{{collab.slaOK}}</a><br/>
                             KO---------------------------------------------------<a>{{collab.slaKO}}</a><br/>
-                      <h2>SLA after checking</h2>
+                      <nz-divider  nzText="SLA après la correction"></nz-divider>
                             OK---------------------------------------------------<a>{{collab.slaCorrOK}}</a><br/>
                             KO---------------------------------------------------<a>{{collab.slaCorrKO}}</a><br/>
-                      <h2>Kanban WIP Limit</h2>
+                      <nz-divider  nzText="La limite de WIP"></nz-divider>
                             start with ---------------------{{collab.WIP}}---------------------everyday for each collab<br/>
                             ------------------------------------------------------------------------------------------------<br/>
                    

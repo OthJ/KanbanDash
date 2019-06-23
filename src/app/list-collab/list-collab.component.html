@@ -24,7 +24,7 @@
     <ng-template #item let-item>
       <nz-list-item [nzContent]="nzContent">
         <ng-template #nzContent>
-            <a routerLink='../Collab/{{item.id}}' style="display: inline">
+            <!-- <a routerLink='../Collab/{{item.id}}' style="display: inline">
                <nz-card>
                 <nz-card-meta
                   [nzAvatar]="avatarTemplate"
@@ -32,8 +32,10 @@
                   nzDescription="This is the description"
                 ></nz-card-meta>
               </nz-card>
-              </a>
-
+              </a> -->
+              <a routerLink='../Collab/{{item.id}}' style="display: inline">
+              <nz-avatar nzText="{{(item.name).split(' ')[0]}}"></nz-avatar>
+              </a> 
         </ng-template>
       </nz-list-item>
     </ng-template>
