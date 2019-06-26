@@ -1,7 +1,19 @@
-<div *ngFor = "let ticket of tickets">
+<!-- <div *ngFor = "let ticket of tickets">
 
    <a routerLink='/detail/{{ticket.id}}'>
         {{ticket.id}}
-   </a> 
+   </a>  -->
 
-</div>
+   <nz-list [nzDataSource]="tickets" [nzRenderItem]="item" [nzGrid]="{ gutter: 16, span: 4 }">
+      <ng-template #item let-item>
+        <nz-list-item [nzContent]="nzContent">
+          <ng-template #nzContent>
+            <nz-card [nzTitle]="item.id">
+              Card content
+            </nz-card>
+          </ng-template>
+        </nz-list-item>
+      </ng-template>
+    </nz-list>
+
+<!-- </div> -->

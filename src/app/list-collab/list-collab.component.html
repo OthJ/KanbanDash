@@ -20,7 +20,7 @@
 
 <!-- <nz-list><nz-card *ngFor='let collab of collabs'> <nz-meta nzTitle="{{collab.name}}" /><nz-avatar nz-Text='collab'></nz-avatar></nz-card></nz-list> -->
     
-<nz-list [nzDataSource]="collabs" [nzRenderItem]="item" [nzGrid]="{ gutter: 16, xs: 24, sm: 12, md: 6, lg: 6, xl: 4 }">
+<nz-list [nzDataSource]="collabs" [nzRenderItem]="item" [nzGrid]="{ gutter: 16, span: 1}">
     <ng-template #item let-item>
       <nz-list-item [nzContent]="nzContent">
         <ng-template #nzContent>
@@ -33,8 +33,8 @@
                 ></nz-card-meta>
               </nz-card>
               </a> -->
-              <a routerLink='../Collab/{{item.id}}' style="display: inline">
-              <nz-avatar nzText="{{(item.name).split(' ')[0]}}"></nz-avatar>
+              <a routerLink='../Collab/{{item.id}}'>
+              <nz-avatar style="margin: 5px " nzText="{{(item.name).split(' ')[0]}}"></nz-avatar>
               </a> 
         </ng-template>
       </nz-list-item>

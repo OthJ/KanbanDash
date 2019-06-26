@@ -17,7 +17,6 @@
 
 -->
 
-<nz-page-header (nzBack)="onBack()" nzBackIcon nzTitle="Auchan ~Kanban KPI" nzSubtitle=""> </nz-page-header>
 
 <!-- <ul>
   <li *ngFor='let coll of collabs' class='col-1-4' routerLink="Collab" >{{coll.name}}</li>
@@ -31,7 +30,31 @@
     </div>
   </a>
 </div> -->
-<app-list-collab></app-list-collab>
+
 
 <!-- <a routerLink='' >list of tickets</a> -->
-<router-outlet></router-outlet>
+
+
+
+
+<nz-layout>
+<nz-header>
+    <nz-page-header (nzBack)="onBack()" nzBackIcon nzTitle="Auchan ~Kanban KPI" nzSubtitle=""> </nz-page-header>
+    
+</nz-header>
+  
+  <nz-content>
+    
+    <div class="wrapper">
+      <!-- <div class="centeringCollab"><app-list-collab></app-list-collab></div> -->
+      <app-list-collab></app-list-collab>
+    <nz-divider></nz-divider>
+    <router-outlet></router-outlet>
+    </div>
+
+
+  </nz-content>
+  <nz-footer>
+
+  </nz-footer>
+</nz-layout>

@@ -61,4 +61,29 @@
       min-width: 60px;
     }
   }
+
+  .wrapper {
+    background:	#f28898;
+    border-radius: 5px;
+    width: 80%;
+    box-shadow: 5px 5px 20px rgb(175, 175, 175);
+    // display: flex;
+    // justify-content: center;
+    // background: #c9cbcc;
+  }
+  .centeringCollab{
+    align-content: center;
+  }
   
+  nz-content{
+    // background-image: linear-gradient(white, rgb(10, 6, 6));
+    // border-radius: 5px;
+    // width: 80%;
+    
+    display: flex;
+    justify-content: center;
+  }
+  
+  nz-layout,nz-header,nz-footer,nz-page-header {
+    background:#f2bc98;
+  }

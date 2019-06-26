@@ -3,8 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
-
-
+// import { ChartsModule } from 'ng2-charts/ng2-charts';
 import { AppComponent } from './app.component';
 import { TicketService } from './ticket/ticket.service';
 import { CollabService } from './collaborator/Collab.service';
@@ -19,6 +18,8 @@ import { registerLocaleData } from '@angular/common';
 import en from '@angular/common/locales/en';
 import { CollaboratorComponent } from './collaborator/collaborator.component';
 import { ListCollabComponent } from './list-collab/list-collab.component';
+import { PiechartComponent } from './piechart/piechart.component';
+import { LinechartComponent } from './linechart/linechart.component';
 
 registerLocaleData(en);
 
@@ -37,7 +38,7 @@ const appRoutes: Routes = [
 
 @NgModule({
   declarations: [
-    AppComponent, TicketComponent,  TicketListComponent, HomeComponent, PageNotFoundComponent, CollaboratorComponent, ListCollabComponent
+    AppComponent, TicketComponent,  TicketListComponent, HomeComponent, PageNotFoundComponent, CollaboratorComponent, ListCollabComponent, PiechartComponent, LinechartComponent
   ],
   imports: [
     BrowserModule, HttpClientModule, FormsModule,  RouterModule.forRoot(appRoutes), NgZorroAntdModule, BrowserAnimationsModule
