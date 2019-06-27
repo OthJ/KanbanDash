@@ -39,7 +39,7 @@
 
 <nz-layout>
 <nz-header>
-    <nz-page-header (nzBack)="onBack()" nzBackIcon nzTitle="Auchan ~Kanban KPI" nzSubtitle=""> </nz-page-header>
+    <nz-page-header (nzBack)="goBack()" nzBackIcon nzTitle="Auchan ~Kanban KPI" nzSubtitle=""> </nz-page-header>
     
 </nz-header>
   
@@ -47,14 +47,17 @@
     
     <div class="wrapper">
       <!-- <div class="centeringCollab"><app-list-collab></app-list-collab></div> -->
-      <app-list-collab></app-list-collab>
+    <app-list-collab></app-list-collab>
     <nz-divider></nz-divider>
     <router-outlet></router-outlet>
+
+    <nz-divider   nzText="la limite de WIP pour cette activité est:"></nz-divider>
+    <div nz-row style="display: flex;justify-content: center"> <h1>{{wipLimit}}</h1> </div>
     </div>
 
 
   </nz-content>
   <nz-footer>
-
+  
   </nz-footer>
 </nz-layout>

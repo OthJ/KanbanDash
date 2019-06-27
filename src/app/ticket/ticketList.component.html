@@ -8,9 +8,16 @@
       <ng-template #item let-item>
         <nz-list-item [nzContent]="nzContent">
           <ng-template #nzContent>
-            <nz-card [nzTitle]="item.id">
-              Card content
-            </nz-card>
+              <a routerLink='/detail/{{item.id}}'>
+                <nz-card [nzTitle]="item.id">
+                    résolu par : {{item.resoluPar}}<br/>
+                    priorité : {{item.priorite}}<br/>
+                    durée : {{item.delai}} (hh:mm)
+                  </nz-card>
+              </a>
+            <!-- <nz-card [nzTitle]="item.id">
+              
+            </nz-card> -->
           </ng-template>
         </nz-list-item>
       </ng-template>

@@ -89,9 +89,9 @@
                                           </tbody>
                                         </nz-table>
                   </div>
-          <nz-divider nzType='vertical'></nz-divider>
+         
           <div nz-col nzSpan='12'>
-                  <app-piechart></app-piechart>
+                  <canvas id='canvas'>{{Piechart}}</canvas>
           </div>
           </div>
           <nz-divider nzText="SLA"></nz-divider>
@@ -100,7 +100,7 @@
 
                               <canvas id='canvas1'>{{Piechart1}}</canvas>
                   </div>
-                  <nz-divider nzType='vertical'></nz-divider>
+                  
                   <div nz-col nzSpan='12'>
                               <nz-table nzTemplateMode>
                                           <thead>
@@ -150,11 +150,20 @@
                                           </tbody>
                                         </nz-table>
                   </div>
-                  <nz-divider nzType='vertical'></nz-divider>
+                  
                   <div nz-col nzSpan='12'>
                               <canvas id='canvas2'>{{Piechart2}}</canvas>
                   </div>
             </div>
+            <nz-divider nzText="distribution des tickets sur le temps"></nz-divider>
+            <div nz-row style="display: flex; justify-content: center">
+                        <div nz-col nzSpan='24' style="width: 70%; height: 70%;">
+                                    <canvas id='canvas3'>{{Linechart}}</canvas>
+                        </div>
+                  
+            </div>
+
+            <button nz-button nzType="primary" (click)='loadChart()'>Load Chart</button>
                   
                         
                       <!-- <nz-divider  nzText="La limite de WIP"></nz-divider>

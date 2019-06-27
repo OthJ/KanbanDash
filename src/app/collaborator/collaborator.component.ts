@@ -17,11 +17,13 @@ export class CollaboratorComponent implements OnInit {
   collab: Collaborateur
 
   id: number;
+  Piechart = [];
   Piechart1 = [];
   Piechart2 = [];
-  
+  wip_limit : number;
   Linechart = []; 
-  pieData = [];
+  pieData1 = [];
+  pieData2 = [];
   // data=[''];
   constructor(private _collabService: CollabService,private route: ActivatedRoute,
     private location: Location) { }
@@ -31,6 +33,7 @@ export class CollaboratorComponent implements OnInit {
     this.onChangeId();
     // console.log('somthing wrong ?with the id : '+this.id)
     // this.loadChart(this.collab);
+    this.getCollabs();
      
     
             
@@ -40,34 +43,74 @@ export class CollaboratorComponent implements OnInit {
     this.route.params.subscribe(params => {
         this.id = params['id'];
         this.getCollab(this.id);
-         this.loadChart()
-        
     });
   }
+
+  
 
   loadChart(){
     // console.log(data.p1+'does he got in chart ?')
     this
-    this.Piechart1 = new Chart('canvas1', {  
+
+    this.Piechart = new Chart('canvas', {  
       type: 'pie',  
       data: {  
         labels: [
-          'Priorité 1',
-          'Priorité 2',
-          'Priorité 3',
-          'Priorité 4',
-          'Priorité 5',
+          'p1',
+          'p2',
+          'p3',
+          'p4',
+          'p5'
         ],  
 
         datasets: [  
           {  
-            //  data: [this.collab.p1,this.collab.p2,this.collab.p3,this.collab.p4,this.collab.p5],  
-            data: [3,6,2,5,6],
+             data: [this.collab.p1,this.collab.p2,this.collab.p3,this.collab.p4,this.collab.p5],  
+            // data: [3,6,2,5,6],
             // data : this.pieData,
             // borderColor: '#3cba9f',  
               backgroundColor: [    
-                "#ffffff",  
-                "#ddd9d6",  
+                "#75b4c0",  
+                "#438644",  
+                "#8bc2a1",
+                "#ebe5e6",
+                "#f0c0b5"  
+              ]  
+          }  
+        ]  
+      },  
+      options: {  
+        legend: {  
+          display: true  
+        },  
+        scales: {  
+          xAxes: [{  
+            display: false  
+          }],  
+          yAxes: [{  
+            display: false  
+          }],  
+        }  
+      }  
+    });
+
+    this.Piechart1 = new Chart('canvas1', {  
+      type: 'pie',  
+      data: {  
+        labels: [
+          'OK',
+          'KO'
+        ],  
+
+        datasets: [  
+          {  
+             data: [this.collab.slaOK,this.collab.slaKO],  
+            // data: [3,6,2,5,6],
+            // data : this.pieData,
+            // borderColor: '#3cba9f',  
+              backgroundColor: [    
+                "#8bc2a1",  
+                "#f0c0b5",  
                 "#c7bdb1",
                 "#5a473a",
                 "#161412"  
@@ -96,22 +139,19 @@ export class CollaboratorComponent implements OnInit {
       type: 'pie',  
       data: {  
         labels: [
-          'Priorité 1',
-          'Priorité 2',
-          'Priorité 3',
-          'Priorité 4',
-          'Priorité 5',
+          'OK',
+          'KO'
         ],  
 
         datasets: [  
           {  
-            //  data: [this.collab.p1,this.collab.p2,this.collab.p3,this.collab.p4,this.collab.p5],  
-            data: [3,6,2,5,6],
-            // data : this.pieData,
+             data: [this.collab.slaCorrOK,this.collab.slaCorrKO],  
+            // data: [3,6,2,5,6],
+            // data : this.pieData1,
             // borderColor: '#3cba9f',  
               backgroundColor: [    
-                "#ffffff",  
-                "#ddd9d6",  
+                "#8bc2a1",  
+                "#f0c0b5",  
                 "#c7bdb1",
                 "#5a473a",
                 "#161412"  
@@ -137,33 +177,33 @@ export class CollaboratorComponent implements OnInit {
 
 
 
-    // this.Linechart = new Chart('canvas', {  
-    //   type: 'line',  
-    //   data: {  
-    //     labels: ['fev','mar','avr'],  
+    this.Linechart = new Chart('canvas3', {  
+      type: 'line',  
+      data: {  
+        labels: ['05/02','13/02','18/02','22/02','23/02','27/02'],  
 
-    //     datasets: [  
-    //       {  
-    //         data: [5,9,3],  
-    //         borderColor: '#3cb371',  
-    //         backgroundColor: "#0000FF",  
-    //       }  
-    //     ]  
-    //   },  
-    //   options: {  
-    //     legend: {  
-    //       display: false  
-    //     },  
-    //     scales: {  
-    //       xAxes: [{  
-    //         display: true  
-    //       }],  
-    //       yAxes: [{  
-    //         display: true  
-    //       }],  
-    //     }  
-    //   }  
-    // }); 
+        datasets: [  
+          {  
+            data: [1,2,0,2,3,2],  
+            borderColor: '#8bc2a1',  
+            backgroundColor: "#8bc2a1",  
+          }  
+        ]  
+      },  
+      options: {  
+        legend: {  
+          display: false  
+        },  
+        scales: {  
+          xAxes: [{  
+            display: true  
+          }],  
+          yAxes: [{  
+            display: true  
+          }],  
+        }  
+      }  
+    }); 
       
        
   }  
@@ -181,8 +221,23 @@ export class CollaboratorComponent implements OnInit {
     // console.log(this.route.snapshot.params["id"]);
     this._collabService.getCollaborateur(id)
       .subscribe(data=>{
-            console.log(data)
+            // console.log(data)
             this.collab=data;
+            this.pieData1.push([this.collab.p1,this.collab.p2,this.collab.p3,this.collab.p4,this.collab.p5])
+            // this.pieData.push[data.p1,data.p2,data.p3,data.p4,data.p5];
+      });
+      
+  }
+
+  getCollabs(): void {
+        
+    // this.id = this.route.snapshot.params["id"];
+    // console.log(this.route.snapshot.params["id"]);
+    this._collabService.getAllCollaborateurs()
+      .subscribe(data=>{
+            // console.log(data)
+            this.wip_limit=data.length;
+            // this.pieData1.push([this.collab.p1,this.collab.p2,this.collab.p3,this.collab.p4,this.collab.p5])
             // this.pieData.push[data.p1,data.p2,data.p3,data.p4,data.p5];
       });
       

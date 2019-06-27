@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import {TicketService} from './ticket/ticket.service';
 import {Ticket} from './ticket/ticket';
+import {Location} from '@angular/common';
 import {Collaborateur} from './collaborator/Collaborateur';
 import {CollabService} from './collaborator/collab.service'
 
@@ -17,14 +18,15 @@ export class AppComponent implements OnInit{
     collabs: Collaborateur[];
     statusMessage= null;
     ticket : Ticket;
+    wipLimit : number;
     data: any;
 
-  constructor(private _ticketService: TicketService,private _collabService: CollabService,private _router: Router){}
+  constructor(private _ticketService: TicketService,private _collabService: CollabService,private _router: Router,private location: Location){}
 
 
   ngOnInit(): void {
    // this.getTickets();
-   // this.getCollabs();
+    this.getCollabs();
 }
 
 getTickets(): void{
@@ -40,12 +42,14 @@ getTickets(): void{
 
 getCollabs(): void{
   this._collabService.getAllCollaborateurs()
-      .subscribe((collabData) => this.collabs = collabData,
+      .subscribe((collabData) => {this.collabs = collabData;this.wipLimit=collabData.length},
       (error) =>{
           console.log(error);
           this.statusMessage = "Problem with service. Please try again later!";
       }
   );
+
+  
   
 }
 
@@ -115,6 +119,10 @@ fileUpload(files) {
       
 
     });
+}
+
+goBack(): void {
+  this.location.back();
 }
 
 }

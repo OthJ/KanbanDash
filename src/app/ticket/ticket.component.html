@@ -57,7 +57,7 @@
         -->
 <div *ngIf="ticket">
 
-        <nz-descriptions nzTitle="Ticket Information" nzBordered>
+        <nz-descriptions nzTitle="Information de Ticket" nzBordered>
                 <nz-descriptions-item nzTitle="id">{{ticket.id}}</nz-descriptions-item>
                 <nz-descriptions-item nzTitle="dateEnregistrement">{{ticket.dateEnregistrement}}</nz-descriptions-item>
                 <nz-descriptions-item nzTitle="origine">{{ticket.origine}}</nz-descriptions-item>
@@ -71,8 +71,8 @@
                   <nz-badge nzStatus="success" nzText="{{ticket.statu}}"></nz-badge>
                 </nz-descriptions-item>
                 <nz-descriptions-item nzTitle="groupeResolu">{{ticket.groupeResolu}}</nz-descriptions-item>
-                <nz-descriptions-item nzTitle="Discount">$20.00</nz-descriptions-item>
-                <nz-descriptions-item nzTitle="Official Receipts">$60.00</nz-descriptions-item>
+                <nz-descriptions-item nzTitle="délai"> {{ticket.delai}} </nz-descriptions-item>
+                <nz-descriptions-item nzTitle="résolut par ">{{ticket.resoluPar}}</nz-descriptions-item>
                 <nz-descriptions-item nzTitle="sujet">
                   {{ticket.sujet}}
                 </nz-descriptions-item>
@@ -82,4 +82,4 @@
     <div><span>id: </span>{{ticket.id}}</div>
     <div><span>date resolution: {{ticket.resoluPar}}</span></div> -->
 </div>
-      <button (click)="goBack()">go back</button>
+      <!-- <button (click)="goBack()">go back</button> -->
