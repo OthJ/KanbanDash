@@ -70,11 +70,11 @@ export class CollaboratorComponent implements OnInit {
             // data : this.pieData,
             // borderColor: '#3cba9f',  
               backgroundColor: [    
-                "#75b4c0",  
-                "#438644",  
-                "#8bc2a1",
-                "#ebe5e6",
-                "#f0c0b5"  
+                "#4b5e15",  
+                "#ff4b44",  
+                "#760007",
+                "#e8ba53",
+                "#fff5a5"   
               ]  
           }  
         ]  
@@ -109,11 +109,11 @@ export class CollaboratorComponent implements OnInit {
             // data : this.pieData,
             // borderColor: '#3cba9f',  
               backgroundColor: [    
-                "#8bc2a1",  
-                "#f0c0b5",  
-                "#c7bdb1",
-                "#5a473a",
-                "#161412"  
+                "#4b5e15",  
+                "#ff4b44",  
+                "#760007",
+                "#e8ba53",
+                "#fff5a5"   
               ]  
           }  
         ]  
@@ -150,11 +150,11 @@ export class CollaboratorComponent implements OnInit {
             // data : this.pieData1,
             // borderColor: '#3cba9f',  
               backgroundColor: [    
-                "#8bc2a1",  
-                "#f0c0b5",  
-                "#c7bdb1",
-                "#5a473a",
-                "#161412"  
+                "#4b5e15",  
+                "#ff4b44",  
+                "#760007",
+                "#e8ba53",
+                "#fff5a5"  
               ]  
           }  
         ]  
@@ -185,8 +185,8 @@ export class CollaboratorComponent implements OnInit {
         datasets: [  
           {  
             data: [1,2,0,2,3,2],  
-            borderColor: '#8bc2a1',  
-            backgroundColor: "#8bc2a1",  
+            borderColor: '#ff4b44',  
+            backgroundColor: "#ff4b44",  
           }  
         ]  
       },  

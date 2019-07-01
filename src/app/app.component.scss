@@ -63,10 +63,12 @@
   }
 
   .wrapper {
-    background:	#f28898;
+    // background:	#f28898;
+    background: rgb(255, 255, 255);
     border-radius: 15px;
     width: 80%;
-    box-shadow: 0px 5px 50px rgb(175, 175, 175);
+    box-shadow: 5px 0px 50px rgb(31, 30, 30);
+    padding:10px;
     // display: flex;
     // justify-content: center;
     // background: #c9cbcc;
@@ -85,5 +87,11 @@
   }
   
   nz-layout,nz-header,nz-footer,nz-page-header {
-    background:#f2bc98;
+    // background:#f2bc98;
+    background:rgb(219, 100, 104);
+    
+  }
+
+  nz-page-header-title{
+    color:white;
   }

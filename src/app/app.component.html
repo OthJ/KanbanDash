@@ -39,7 +39,14 @@
 
 <nz-layout>
 <nz-header>
-    <nz-page-header (nzBack)="goBack()" nzBackIcon nzTitle="Auchan ~Kanban KPI" nzSubtitle=""> </nz-page-header>
+    <nz-page-header (nzBack)="goBack()" nzBackIcon>
+        <nz-page-header-title>Auchan ~Kanban KPI</nz-page-header-title>
+        <nz-page-header-extra>
+          <nz-upload nzAction="./fileUpload($event.target.files)">
+            <button nz-button><i nz-icon nzType="upload"></i><span></span></button>
+          </nz-upload>
+        </nz-page-header-extra>
+    </nz-page-header>
     
 </nz-header>
   
